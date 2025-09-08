@@ -1,0 +1,14 @@
+# The main pipeline for demo_dab
+resources:
+  pipelines:
+    demo_dab_pipeline:
+      name: demo_dab_pipeline
+      catalog: labuser11492310_1757302126_3_prod
+      schema: default
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
